@@ -16,23 +16,38 @@
             width: 100px;
             background-color: aliceblue;
             border: 1px solid #cfcfcf;
+            font-size: 80px;
+            text-align: center;
+            color:#6f0707;
         } 
     </style>
+	
+	<script>
+        let mas = ['','','','','','','','','']
+        let masCell = ['c1','c2','c3','c4','c5','c6','c7','c8','c9']
+
+		function myClick(id) {
+            var index = masCell.indexOf(id); 
+            mas[index]='x'
+			document.getElementById(id).innerHTML = "X";
+            console.log(mas)
+		}
+	</script>
+    
 </head>
 <body>
-
     <div class="wrapper">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell"  id="c1" onclick="myClick('c1')">X</div>
+        <div class="cell"  id="c2" onclick="myClick('c2')"></div>
+        <div class="cell"  id="c3" onclick="myClick('c3')"></div>
  
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell"  id="c4" onclick="myClick('c4')"></div>
+        <div class="cell"  id="c5" onclick="myClick('c5')"></div>
+        <div class="cell"  id="c6" onclick="myClick('c6')"></div>
  
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell"  id="c7" onclick="myClick('c7')"></div>
+        <div class="cell"  id="c8" onclick="myClick('c8')"></div>
+        <div class="cell"  id="c9" onclick="myClick('c9')"></div>
     </div> 
 
 </body>
