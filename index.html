@@ -3,57 +3,67 @@
 <!------------------------------>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Игра крестики нолики</title>
-    <style>
-        .wrapper{
-            width:310px;
-            height:310px;
-            margin:0 auto;
-            position: relative;
-        }        
-        .cell{
-            float: left;
-            height: 100px;
-            width: 100px;
-            background-color: aliceblue;
-            border: 1px solid #cfcfcf;
-            font-size: 80px;
-            text-align: center;
-            color:#6f0707;
-        } 
-    </style>
-	
-	<script>
-        let mas = ['','','','','','','','','']
-        let masCell = ['c1','c2','c3','c4','c5','c6','c7','c8','c9']
 
-		function myClick(id) {
-            var index = masCell.indexOf(id); 
-            mas[index]='x'
-			document.getElementById(id).innerHTML = "X";
-            console.log(mas)
-		}
-	</script>
+    <head>
+        <meta charset="utf-8">
+        <title>Игра крестики нолики</title>
+        <style>
+            .wrapper{
+                width:310px;
+                height:430px;
+                margin:0 auto;
+                position: relative;
+            }        
+            .cell{
+                float: left;
+                height: 100px;
+                width: 100px;
+                background-color: aliceblue;
+                border: 1px solid #cfcfcf;
+                font-size: 80px;
+                text-align: center;
+                color:#120b62;
+            } 
+        </style>
+        
+        <script>
+            let mas = ['','','','','','','','','']
+            let masCell = ['c1','c2','c3','c4','c5','c6','c7','c8','c9']
+
+            function myClick(id) {
+
+                i = masCell.indexOf(id); 
+                mas[i]='x'
+                document.getElementById(id).innerHTML = "X";
+                console.log(mas)
+
+                if (mas[0] !='' && mas[1]!=''  && mas[2]!='' && mas[3]!='' && mas[4]!='' && mas[5]!='' && mas[6]!='' && mas[7]!='' && mas[8]!='') {
+                    document.getElementById("end").innerHTML = "КОНЕЦ ИГРЫ";    
+                }
+            }
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <h3>Игра "Крестики-нолики с компьютером"</h3>
+            <h3>Автор: ФИО</h3>
+            <div class="cell"  id="c1" onclick="myClick('c1')"></div>
+            <div class="cell"  id="c2" onclick="myClick('c2')"></div>
+            <div class="cell"  id="c3" onclick="myClick('c3')"></div>
     
-</head>
-<body>
-    <div class="wrapper">
-        <h3>Игра "Крестики-нолики с компьютером"</h3>
-        <h3>Автор: ФИО</h3>
-        <div class="cell"  id="c1" onclick="myClick('c1')"></div>
-        <div class="cell"  id="c2" onclick="myClick('c2')"></div>
-        <div class="cell"  id="c3" onclick="myClick('c3')"></div>
- 
-        <div class="cell"  id="c4" onclick="myClick('c4')"></div>
-        <div class="cell"  id="c5" onclick="myClick('c5')"></div>
-        <div class="cell"  id="c6" onclick="myClick('c6')"></div>
- 
-        <div class="cell"  id="c7" onclick="myClick('c7')"></div>
-        <div class="cell"  id="c8" onclick="myClick('c8')"></div>
-        <div class="cell"  id="c9" onclick="myClick('c9')"></div>
-    </div> 
+            <div class="cell"  id="c4" onclick="myClick('c4')"></div>
+            <div class="cell"  id="c5" onclick="myClick('c5')"></div>
+            <div class="cell"  id="c6" onclick="myClick('c6')"></div>
+    
+            <div class="cell"  id="c7" onclick="myClick('c7')"></div>
+            <div class="cell"  id="c8" onclick="myClick('c8')"></div>
+            <div class="cell"  id="c9" onclick="myClick('c9')"></div>
+            <div class="end" id="end"></div>
+        </div> 
 
-</body>
+    </body>
+
 </html>
